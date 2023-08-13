@@ -160,11 +160,7 @@ h2::after {
   right: 10%;
 }
 
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-
 .my-info-div-cont {
-  border: solid red;
-
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -248,12 +244,13 @@ h2::after {
 
 .my-image-cont {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 40%;
+  height: 520px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+
+  border: solid;
 }
 
 .my-image-cont > img {
@@ -262,5 +259,21 @@ h2::after {
   position: absolute;
   object-fit: cover;
 
-  border-radius: 50%;
+  border-radius: 4%;
+}
+
+.started-position-img {
+  scale: 0.001;
+}
+
+.scale-min {
+  scale: 0.001;
+  transition: 3s;
+  z-index: 10;
+}
+
+.scale-max {
+  z-index: 20;
+  scale: 1;
+  transition: 3s;
 }
