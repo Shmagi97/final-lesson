@@ -24,7 +24,100 @@
 }
 
 .text-left {
-  width: 113px;
+  position: relative;
+  padding: 10px 10px;
+  height: 90px;
+  display: inline-block;
+
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.text-left > span {
+  position: absolute;
+  display: block;
+}
+
+.text-left > span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: line-run1 1s linear infinite;
+}
+
+@keyframes line-run1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.text-left > span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 70%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: line-run2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes line-run2 {
+  0% {
+    top: -100px;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.text-left > span:nth-child(3) {
+  right: -100%;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: line-run3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes line-run3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.text-left > span:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 70%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: line-run4 1s linear infinite;
+  animation-delay: 0.6s;
+}
+
+@keyframes line-run4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
 
 .text-right {
@@ -67,12 +160,14 @@ h2::after {
   right: 10%;
 }
 
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
 .my-info-div-cont {
   border: solid red;
-  position: relative;
+
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .my-info-cont {
@@ -152,21 +247,20 @@ h2::after {
 }
 
 .my-image-cont {
-  border: solid red;
-  position: absolute;
-  width: 505px;
-  height: 505px;
+  position: relative;
+  width: 500px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  left: 5%;
-  bottom: -100px;
 }
 
 .my-image-cont > img {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
   position: absolute;
+  object-fit: cover;
+
   border-radius: 50%;
 }
