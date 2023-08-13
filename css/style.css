@@ -435,7 +435,6 @@ h2::after {
     left: 0%;
   }
 }
-
 .active-animation {
   animation: skills-line-run1 linear;
   animation-duration: 2s;

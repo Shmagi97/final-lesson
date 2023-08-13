@@ -1,3 +1,5 @@
+// slides
+
 const myImageCont = document.querySelector(".my-image-cont");
 const mayImgJs = document.querySelectorAll(".my-img");
 const myImgArray = Array.from(mayImgJs);
@@ -28,3 +30,23 @@ function myImageFn() {
   });
 }
 setInterval(myImageFn, 5000);
+
+// skills
+
+const linerSkilsSpan = document.querySelectorAll(".liner-skils-span");
+const linerSkilsSpanArray = Array.from(linerSkilsSpan);
+
+function scrollAnimation(elemenForEach) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= 700 && window.scrollY <= 1100) {
+      elemenForEach.classList.add("active-animation");
+      console.log("hahahah");
+    } else {
+      elemenForEach.classList.remove("active-animation");
+    }
+  });
+}
+
+linerSkilsSpanArray.forEach((el, index) => {
+  scrollAnimation(el);
+});
