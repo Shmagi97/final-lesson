@@ -175,13 +175,6 @@ h2::after {
   row-gap: 30px;
 }
 
-.iqon-droebiti > img {
-  width: 50px;
-  height: 50px;
-  color: red;
-  background: black;
-}
-
 .my-info-iqon-cont {
   display: flex;
   column-gap: 30px;
@@ -249,8 +242,6 @@ h2::after {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  border: solid;
 }
 
 .my-image-cont > img {
@@ -276,4 +267,162 @@ h2::after {
   z-index: 20;
   scale: 1;
   transition: 3s;
+}
+
+/* my info 2 */
+
+.main-my-info {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  column-gap: 30px;
+  border: solid red;
+  align-items: center;
+}
+
+.section-my-info {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 15px;
+  width: 30%;
+}
+
+.section-my-info > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-my-info > div > h1 {
+  color: #222222;
+  font-size: 40px;
+}
+
+.section-my-info > div > span {
+  color: #daae19;
+  font-size: 14px;
+}
+
+.section-my-info > p {
+  color: #555555;
+  font-size: 15px;
+  opacity: 60%;
+}
+
+.section-my-info > div:nth-child(3) {
+  width: 100%;
+  align-items: end;
+}
+
+.section-my-info > div > div {
+  width: 152px;
+  height: 50px;
+  background: #d7435f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.section-my-info > div > div > span {
+  color: #b9b9b9;
+  font-size: 15px;
+}
+
+.section-my-info > div > div:hover {
+  background: red;
+}
+
+.section-my-info > div > div:hover span {
+  color: white;
+}
+
+/* section-my-fhoto */
+
+/* .section-my-fhoto {
+ 
+} */
+
+.section-my-fhoto > img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 5%;
+  /* object-position: 100% 80%; */
+}
+
+/* my-skills */
+
+.my-skills {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+}
+
+.my-skills > div > span {
+  color: #555555;
+  font-size: 15px;
+  opacity: 60%;
+}
+
+.my-skills > div > span > span {
+  color: #e93656;
+  font-size: 15px;
+}
+
+.my-skills > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+}
+
+.my-skills-div-cont {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  display: inline-block;
+  width: 100%;
+  height: 3px;
+
+  /* border: solid; */
+}
+
+.my-skills-div-cont > span {
+}
+
+.my-skills-div-cont-span1 {
+  position: absolute;
+  display: block;
+  border: solid;
+  top: 0;
+  left: -100%;
+  width: 95%;
+  height: 2px;
+  background: linear-gradient(90deg);
+  animation: skills-line-run1 linear;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  color: red;
+}
+
+@keyframes skills-line-run1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 0%;
+  }
+}
+
+/* droebiti */
+.iqon-droebiti > img {
+  width: 50px;
+  height: 50px;
+  color: red;
+  background: black;
+  margin-top: 500px;
 }
