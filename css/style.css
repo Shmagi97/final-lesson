@@ -497,7 +497,7 @@ a {
 .servis-hover-info-main {
   width: 100%;
   height: 900px;
-  border: solid red;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -551,6 +551,42 @@ a {
 .servis-hover-info-section > div > p {
   color: #ececec;
   font-size: 14px;
+}
+
+/* bacground-image-section rekomendaciebi */
+
+.bacground-image-section {
+  border: solid red;
+  width: 100%;
+  height: 570px;
+  background-size: 100%;
+  background-clip: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bacground-image-section-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  border: solid yellow;
+}
+
+.bacground-image-section-div:first-child div {
+  border: dashed red;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+}
+
+/* first chaildi ar mushaobs sworad  */
+
+.bacground-image-section-div:first-child div {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
 }
 
 /* droebiti */
