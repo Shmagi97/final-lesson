@@ -276,7 +276,7 @@ h2::after {
   margin-top: 100px;
   display: flex;
   column-gap: 30px;
-  border: solid red;
+
   align-items: center;
 }
 
@@ -338,12 +338,6 @@ h2::after {
   color: white;
 }
 
-/* section-my-fhoto */
-
-/* .section-my-fhoto {
- 
-} */
-
 .section-my-fhoto > img {
   width: 100%;
   height: 500px;
@@ -358,7 +352,13 @@ h2::after {
   width: 30%;
   display: flex;
   flex-direction: column;
-  row-gap: 7px;
+  row-gap: 13px;
+}
+
+.my-skills > div:not(:last-child) {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
 }
 
 .my-skills > div > span {
@@ -370,12 +370,6 @@ h2::after {
 .my-skills > div > span > span {
   color: #e93656;
   font-size: 15px;
-}
-
-.my-skills > div {
-  display: flex;
-  flex-direction: column;
-  row-gap: 3px;
 }
 
 .my-skills-div-cont {
@@ -441,7 +435,61 @@ h2::after {
   animation-fill-mode: forwards;
 }
 
-.my-skills-div-cont > span {
+/* section-number-adress-email */
+
+.section-number-adress-email {
+  width: 100%;
+  height: 210px;
+  background: #131a36;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+}
+
+/*seqciis divis shvilobili yvela pirveli divi firs chaildi */
+
+.section-number-adress-email > div > div:first-child {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: dashed 2px #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.section-number-adress-email > div > div:first-child:hover {
+  background: #e93656;
+  border: none;
+}
+
+/* seqciis yvela  divis shvilobili  yvela meore divi last chaildi  */
+
+.section-number-adress-email > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+/*seqciis yvela  divis shvilobili  yvela meore divi last chaildis spani da a tegebi */
+
+.section-number-adress-email > div > div:last-child span,
+a {
+  color: #ffffff;
+  font-size: 25px;
+  text-decoration: none;
+  color: #dfdfdf;
+  font-size: 24px;
+}
+
+/*mshobeli seqciis shvilobili, yvela mShobeli divi */
+
+.section-number-adress-email > div {
+  display: flex;
+  column-gap: 20px;
 }
 
 /* droebiti */
