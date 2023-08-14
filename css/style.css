@@ -492,6 +492,67 @@ a {
   column-gap: 20px;
 }
 
+/* servis-hover-info */
+
+.servis-hover-info-main {
+  width: 100%;
+  height: 900px;
+  border: solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.servis-hover-info-section {
+  width: 70%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.servis-hover-info-section > div {
+  min-width: 200px;
+
+  height: 360px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 15px;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  background: #ececec;
+}
+
+.servis-hover-info-section > div:hover {
+  background: #15263e;
+}
+
+.servis-hover-info-section > div > img {
+  width: 60px;
+  height: 60px;
+}
+
+.servis-hover-info-section > div:hover img {
+  visibility: hidden;
+}
+
+.servis-hover-info-section > div > span {
+  color: #222222;
+  font-size: 22px;
+}
+
+.servis-hover-info-section > div:hover span {
+  color: #ffffff;
+}
+
+.servis-hover-info-section > div > p {
+  color: #ececec;
+  font-size: 14px;
+}
+
 /* droebiti */
 .iqon-droebiti > img {
   width: 50px;
