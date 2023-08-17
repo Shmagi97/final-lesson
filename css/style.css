@@ -556,7 +556,6 @@ a {
 /* bacground-image-section rekomendaciebi */
 
 .bacground-image-section {
-  border: solid red;
   width: 100%;
   height: 570px;
   background-size: 100%;
@@ -568,11 +567,10 @@ a {
 
 .bacground-image-section > div {
   display: flex;
-  column-gap: 25px;
+  column-gap: 65px;
   align-items: center;
   justify-content: center;
-  width: 70%;
-  border: solid yellow;
+  width: 80%;
 }
 
 .bacground-image-section > div p {
@@ -580,14 +578,15 @@ a {
   font-size: 15px;
   line-height: 30px;
   letter-spacing: 0.45px;
+  max-width: 20%;
 }
 
 /* image div */
 
 .bacground-image-section > div > div:nth-child(2) {
   border: dashed #ffffff;
-  width: 170px;
-  height: 170px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -623,20 +622,27 @@ a {
   font-size: 28px;
 }
 
-/* ptickebi */
+/* ptichkebi */
 
 .bacground-image-section > div > div:last-child {
-  width: 100px;
-  height: 100px;
-  border: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
 }
 
 /* araa damTavrebuli */
 
-.bacground-image-section > div > div:last-child span:first-child {
-  width: 100px;
-  height: 100px;
-  border: solid;
+.bacground-image-section > div > div:last-child span {
+  width: 10px;
+  height: 10px;
+  border: solid white;
+}
+
+.bacground-image-section > div > div:last-child span:hover {
+  border: solid red;
+  cursor: pointer;
 }
 
 /* droebiti */
