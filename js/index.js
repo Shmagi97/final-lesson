@@ -59,7 +59,6 @@ const rekomendationInfo = [
     image: "foto/developer.jpg",
     name: "Alison brie",
     profesion: "Senior developer",
-    id: "1",
   },
 
   {
@@ -67,7 +66,6 @@ const rekomendationInfo = [
     image: "foto/back and developer.jfif",
     name: "Nicholas Baca",
     profesion: "Back-end developer",
-    id: "2",
   },
 
   {
@@ -75,56 +73,59 @@ const rekomendationInfo = [
     image: "foto/veb dizainer.jpg",
     name: "Mau Thomas",
     profesion: "web designer",
-    id: "3",
   },
 ];
-
-// const bacgroundImageSection = document.querySelector(
-//   "#bacgroundImageSectionJs"
-// );
-
-// function getElementsInRekomendationHtml() {
-//   const addRekomendationElementInHtml = document.createElement("div");
-//   addRekomendationElementInHtml.innerHTML = `
-
-//     <p class="rekomendaition-info-p">
-//     ${rekomendationInfo[0].info}
-//     </p>
-//     <div class="foto">
-//     <img src="${rekomendationInfo[0].image}" />
-//     </div>
-//     <div>
-//     <span>"</span>
-//     <span>${rekomendationInfo[0].profesion}</span>
-//     <span>${rekomendationInfo[0].name}</span>
-//     </div>
-//     <div>
-//     <span class="rekomendation-span-click"></span>
-//     <span class="rekomendation-span-click"></span>
-//     <span class="rekomendation-span-click"></span>
-//     </div>
-
-//   `;
-
-//   bacgroundImageSection.appendChild(addRekomendationElementInHtml);
-// }
-
-// getElementsInRekomendationHtml();
-
-const spanClick = document.querySelectorAll(".rekomendation-span-click");
-const spanClickArray = Array.from(spanClick);
 
 const bacgroundImageSection = document.querySelector(
   "#bacgroundImageSectionJs"
 );
-let lastAddedRecommendation = null; // Store reference to the last added recommendation
 
-function rekomendationInfoMapFn(indexFunction, clearZedmetiIndex) {
-  // Create a new recommendation element
-  const addRekomendationElementInHtml = document.createElement("div");
-  addRekomendationElementInHtml.id = rekomendationInfo[indexFunction].id; // Add an id to identify the element
-  console.log(addRekomendationElementInHtml.id);
-  addRekomendationElementInHtml.innerHTML = `
+// ფუნქცია addElementsInHtmlFn-ი უზრუნველყოფს მასივიდან bacgroundImageSection-ში ელემენტების დახატვას
+
+function addElementsInHtmlFn() {
+  const addRekomendationElementInHtmlStart = document.createElement("div");
+  addRekomendationElementInHtmlStart.innerHTML = `
+  <p class="rekomendaition-info-p">
+  ${rekomendationInfo[1].info}
+  </p>
+  <div class="foto">
+  <img src="${rekomendationInfo[1].image}" />
+  </div>
+  <div>
+  <span>"</span>
+  <span>${rekomendationInfo[1].profesion}</span>
+  <span>${rekomendationInfo[1].name}</span>
+  </div>
+  <div>
+  <span class="rekomendation-span-click"></span>
+  <span class="rekomendation-span-click"></span>
+  <span class="rekomendation-span-click"></span>
+</div>
+ 
+
+ 
+ `;
+
+  // spanClick- სპან ელემენტები რომლის დახატვაც მოხდამასივიდან addRekomendationElementInHtmlStart- ში არსებული
+  //სპან ელემენტები დავასელექთე რათა შემძლებოდა მასზე ფორიჩიშ გამოყენება
+  //
+
+  const spanClick = addRekomendationElementInHtmlStart.querySelectorAll(
+    ".rekomendation-span-click"
+  );
+  const spanClickArray = Array.from(spanClick);
+
+  // ამ forEach- ში მოთავსებული ფუნქცია rekomendationInfoMapFn უზრუნველყოფს addElementsInHtmlFn-იტ დახატულ ელემენტების სპანზე კლიკით
+  // ელემენტების ცვლილებას, თავისმხრივ ამ ფუნქციის შესრულებისას bacgroundImageSection-ში გადაეცემა ახალი სპან ელემენტები რომელზეც ასევე გემოყენებულია
+  // forEach-ი სპანებზე bacgroundImageSection-ში ახალი ელემენტების ჩასახატად
+
+  let lastAddedRecommendation = null;
+
+  spanClickArray.forEach((span, index) => {
+    function rekomendationInfoMapFn(indexFunction) {
+      const addRekomendationElementInHtml = document.createElement("div");
+
+      addRekomendationElementInHtml.innerHTML = `
   <p class="rekomendaition-info-p">
   ${rekomendationInfo[indexFunction].info}
   </p>
@@ -140,70 +141,47 @@ function rekomendationInfoMapFn(indexFunction, clearZedmetiIndex) {
   <span class="rekomendation-span-click"></span>
   <span class="rekomendation-span-click"></span>
   <span class="rekomendation-span-click"></span>
-  </div>
+</div>
 
   `;
 
-  // Remove the previously added recommendation if it exists
-  if (lastAddedRecommendation) {
-    bacgroundImageSection.removeChild(lastAddedRecommendation);
-  }
+      if (lastAddedRecommendation) {
+        bacgroundImageSection.removeChild(lastAddedRecommendation);
+      }
 
-  // Append the new recommendation element
-  bacgroundImageSection.appendChild(addRekomendationElementInHtml);
+      bacgroundImageSection.appendChild(addRekomendationElementInHtml);
 
-  // Store the reference to the last added recommendation
-  lastAddedRecommendation = addRekomendationElementInHtml;
+      // სპანზე პირველი კლიკისას lastAddedRecommendation- არის ნალი მეორე კლიკის შემდეგ  lastAddedRecommendation = addRekomendationElementInHtml; სინტაქსით
+      // lastAddedRecommendation გადაეცემა ის ელემენტები რომელის სპანზე კლიკიც მოხდა ოღონდ 1 კლიკით ადრე, ანუ ის ელემენტები რომელიც წასაშლელია.
 
-  // Filter and log the filtered recommendation array
-  const filteredRekomendationInfo = rekomendationInfo.filter(
-    (_, index) => index !== indexFunction
-  );
-  console.log(filteredRekomendationInfo);
+      lastAddedRecommendation = addRekomendationElementInHtml;
+
+      const spanClickInRekomendationFn =
+        addRekomendationElementInHtml.querySelectorAll(
+          ".rekomendation-span-click"
+        );
+      const spanClickArraynRekomendationFn = Array.from(
+        spanClickInRekomendationFn
+      );
+
+      spanClickArraynRekomendationFn.forEach((btn, indexSpans) => {
+        btn.addEventListener("click", () => {
+          rekomendationInfoMapFn(indexSpans);
+        });
+      });
+    }
+
+    span.addEventListener("click", () => {
+      rekomendationInfoMapFn(index);
+      // ეს სინტაქსი უზრუნველყოფს ფუნქცია addElementsInHtmlFn - ში დახატული პირველადი ელემენტების none-ს, ვინაიდან მისი დინამიურად ამორება არ არის საჭირო
+      // რადგან მისი ამოღება მხოლოდ ერთხელ ხდება.
+      addRekomendationElementInHtmlStart.style.display = "none";
+    });
+  });
+
+  bacgroundImageSection.appendChild(addRekomendationElementInHtmlStart);
 }
 
-// rekomendationInfoMapFn();
+// გასაწერია მოხდეს ამ ფუნქციის გამოძახება სქროლზე
 
-spanClickArray.forEach((btn, indexSpans) => {
-  btn.addEventListener("click", () => {
-    rekomendationInfoMapFn(indexSpans);
-  });
-});
-
-// function rekomendationInfoMapFn(indexFunction, clearZedmetiIndex) {
-//   const addRekomendationElementInHtml = document.createElement("div");
-//   addRekomendationElementInHtml.innerHTML = `
-
-//     <p class="rekomendaition-info-p">
-//     ${rekomendationInfo[indexFunction].info}
-//     </p>
-//     <div class="foto">
-//     <img src="${rekomendationInfo[indexFunction].image}" />
-//     </div>
-//     <div>
-//     <span>"</span>
-//     <span>${rekomendationInfo[indexFunction].profesion}</span>
-//     <span>${rekomendationInfo[indexFunction].name}</span>
-//     </div>
-//     <div>
-//     <span class="rekomendation-span-click"></span>
-//     <span class="rekomendation-span-click"></span>
-//     <span class="rekomendation-span-click"></span>
-//     </div>
-
-//   `;
-
-//   bacgroundImageSection.appendChild(addRekomendationElementInHtml);
-
-//   const filteredRekomendationInfo = rekomendationInfo.filter(
-//     (_, index) => index !== indexFunction
-//   );
-
-//   console.log(filteredRekomendationInfo);
-// }
-
-// spanClickArray.forEach((btn, indexSpans) => {
-//   btn.addEventListener("click", () => {
-//     rekomendationInfoMapFn(indexSpans);
-//   });
-// });
+addElementsInHtmlFn();
