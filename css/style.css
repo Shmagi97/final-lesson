@@ -690,7 +690,47 @@ h4 {
   border: solid yellow;
   height: 400px;
   width: 30%;
+  background: #15263e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
 }
+
+.projects-name > ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.projects-name > ul > li {
+  font-size: 20px;
+  color: #ffffff;
+  list-style: none;
+}
+
+.projects-name > ul > li:hover {
+  color: #e93656;
+  cursor: pointer;
+}
+
+.projects-name > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 45px;
+}
+
+.projects-name > div > span {
+  border: 0.5px solid #15263e;
+  width: 50px;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* .projects-name > ul > li:hover ~ .projects-name > div > span {
+  border: 0.5px solid red;
+  width: 50px;
+} */
 
 .projects {
   border: solid yellow;
