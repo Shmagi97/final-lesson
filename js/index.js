@@ -40,14 +40,13 @@ function scrollAnimation(elemenForEach) {
   window.addEventListener("scroll", () => {
     if (window.scrollY >= 700 && window.scrollY <= 1100) {
       elemenForEach.classList.add("active-animation");
-      console.log("hahahah");
     } else {
       elemenForEach.classList.remove("active-animation");
     }
   });
 }
 
-linerSkilsSpanArray.forEach((el, index) => {
+linerSkilsSpanArray.forEach((el, indexi) => {
   scrollAnimation(el);
 });
 
@@ -106,6 +105,8 @@ function addElementsInHtmlFn() {
  
  `;
 
+  addRekomendationElementInHtmlStart.classList.add("divJsActive");
+
   // spanClick- სპან ელემენტები რომლის დახატვაც მოხდამასივიდან addRekomendationElementInHtmlStart- ში არსებული
   //სპან ელემენტები დავასელექთე რათა შემძლებოდა მასზე ფორიჩიშ გამოყენება
   //
@@ -145,6 +146,9 @@ function addElementsInHtmlFn() {
 
   `;
 
+      addRekomendationElementInHtml.classList.add("divJsActive");
+      // console.log(addRekomendationElementInHtml);
+
       if (lastAddedRecommendation) {
         bacgroundImageSection.removeChild(lastAddedRecommendation);
       }
@@ -160,9 +164,12 @@ function addElementsInHtmlFn() {
         addRekomendationElementInHtml.querySelectorAll(
           ".rekomendation-span-click"
         );
+
       const spanClickArraynRekomendationFn = Array.from(
         spanClickInRekomendationFn
       );
+
+      spanClickArraynRekomendationFn[indexFunction].style.border = "solid red";
 
       spanClickArraynRekomendationFn.forEach((btn, indexSpans) => {
         btn.addEventListener("click", () => {
@@ -184,4 +191,20 @@ function addElementsInHtmlFn() {
 
 // გასაწერია მოხდეს ამ ფუნქციის გამოძახება სქროლზე
 
-addElementsInHtmlFn();
+let funqciisArGameoreba = false;
+
+function scrolStartAddElementsInHtmlFn() {
+  window.addEventListener("scroll", () => {
+    if (
+      window.scrollY >= 2500 &&
+      window.scrollY <= 2800 &&
+      !funqciisArGameoreba
+    ) {
+      addElementsInHtmlFn();
+
+      funqciisArGameoreba = true;
+    }
+  });
+}
+
+scrolStartAddElementsInHtmlFn();

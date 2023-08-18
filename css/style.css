@@ -573,10 +573,6 @@ a {
   width: 80%;
 }
 
-/* .bacground-image-section > div:first-child {
-  display: none;
-} */
-
 .bacground-image-section > div p {
   color: #ffffff;
   font-size: 15px;
@@ -648,6 +644,24 @@ a {
   border: solid red;
   cursor: pointer;
 }
+
+/* javaskriptidan damatebuli divis animacia */
+
+.divJsActive {
+  animation-name: animJs;
+  animation-duration: 1s;
+}
+
+@keyframes animJs {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+/* h4-div Latest Projects */
 
 /* droebiti */
 .iqon-droebiti > img {
