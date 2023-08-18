@@ -663,6 +663,41 @@ a {
 
 /* h4-div Latest Projects */
 
+.Latest-Projects-main {
+  border: solid red;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
+}
+
+h4 {
+  color: #2e2e2e;
+  font-size: 70px;
+}
+
+.sections-cont {
+  display: flex;
+  justify-content: center;
+  border: solid red;
+  column-gap: 30px;
+  width: 80%;
+}
+
+.projects-name {
+  border: solid yellow;
+  height: 400px;
+  width: 30%;
+}
+
+.projects {
+  border: solid yellow;
+  height: 700px;
+  width: 70%;
+}
+
 /* droebiti */
 .iqon-droebiti > img {
   width: 50px;
