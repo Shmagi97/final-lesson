@@ -680,10 +680,11 @@ h4 {
 
 .sections-cont {
   display: flex;
+
   justify-content: center;
   border: solid red;
   column-gap: 30px;
-  width: 80%;
+  width: 90%;
 }
 
 .projects-name {
@@ -700,6 +701,7 @@ h4 {
 .projects-name > ul {
   display: flex;
   flex-direction: column;
+  width: 50%;
   row-gap: 20px;
 }
 
@@ -707,6 +709,20 @@ h4 {
   font-size: 20px;
   color: #ffffff;
   list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.projects-name > ul > li > span {
+  position: relative;
+}
+
+.projects-name > ul > li > span > span {
+  position: absolute;
+  border: 0.5px solid red;
+  width: 230px;
+  visibility: hidden;
+  left: 10px;
 }
 
 .projects-name > ul > li:hover {
@@ -714,28 +730,69 @@ h4 {
   cursor: pointer;
 }
 
-.projects-name > div {
-  display: flex;
-  flex-direction: column;
-  row-gap: 45px;
+.projects-name > ul > li:hover span span {
+  visibility: visible;
 }
-
-.projects-name > div > span {
-  border: 0.5px solid #15263e;
-  width: 50px;
-}
-
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-
-/* .projects-name > ul > li:hover ~ .projects-name > div > span {
-  border: 0.5px solid red;
-  width: 50px;
-} */
 
 .projects {
-  border: solid yellow;
   height: 700px;
-  width: 70%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.projects > div {
+  border: solid red;
+  width: 100%;
+  height: 350px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.projects > div:hover div {
+  visibility: visible;
+  cursor: pointer;
+}
+
+.projects > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projects > div > div {
+  position: absolute;
+  background: #000000;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid red;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+.projects > div > div > div {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #e93656;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects > div > div > span {
+  color: #dddddd;
+  font-size: 11px;
+}
+
+.projects > div > div > p {
+  color: #ffffff;
+  font-size: 23px;
 }
 
 /* droebiti */
