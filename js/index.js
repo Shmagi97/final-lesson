@@ -208,3 +208,116 @@ function scrolStartAddElementsInHtmlFn() {
 }
 
 scrolStartAddElementsInHtmlFn();
+
+// project elements
+
+const projectsElementArray = [
+  {
+    bacgraundImg: "foto/projeqt 1.jfif",
+    bacgraundImgAlt: "projeqt 1",
+    iqonHeartAlt: "heart",
+    iqonHeart: "icons/heart.svg",
+    spanDro: "9 MONTS AGO",
+    pProjectInfo: "3D Mockup Design",
+  },
+
+  {
+    bacgraundImg: "foto/projeqt 2.png",
+    bacgraundImgAlt: "projeqt 2",
+    iqonHeartAlt: "heart",
+    iqonHeart: "icons/heart.svg",
+    spanDro: "9 MONTS AGO",
+    pProjectInfo: "3D Mockup Design",
+  },
+
+  {
+    bacgraundImg: "foto/projeqt 3.png",
+    bacgraundImgAlt: "projeqt 3",
+    iqonHeartAlt: "heart",
+    iqonHeart: "icons/heart.svg",
+    spanDro: "9 MONTS AGO",
+    pProjectInfo: "3D Mockup Design",
+  },
+
+  {
+    bacgraundImg: "foto/projeqt 4.webp",
+    bacgraundImgAlt: "projeqt 4",
+    iqonHeartAlt: "heart",
+    iqonHeart: "icons/heart.svg",
+    spanDro: "9 MONTS AGO",
+    pProjectInfo: "3D Mockup Design",
+  },
+
+  {
+    bacgraundImg: "foto/projeqt 5.jpg",
+    bacgraundImgAlt: "projeqt 5",
+    iqonHeartAlt: "heart",
+    iqonHeart: "icons/heart.svg",
+    spanDro: "9 MONTS AGO",
+    pProjectInfo: "3D Mockup Design",
+  },
+
+  {
+    bacgraundImg: "foto/projeqt 6.jfif",
+    bacgraundImgAlt: "projeqt 6",
+    iqonHeartAlt: "heart",
+    iqonHeart: "icons/heart.svg",
+    spanDro: "9 MONTS AGO",
+    pProjectInfo: "3D Mockup Design",
+  },
+];
+
+function getProjectsInmasiv() {
+  const projectsElementArrayCvladi = projectsElementArray.map((el, index) => {
+    return `
+    <div>
+    <img src="${el.bacgraundImg}" alt="${el.bacgraundImgAlt}" /> 
+    <div>
+      <div>
+      <img src="${el.iqonHeart}" alt="${el.iqonHeartAlt}" /> 
+      </div>
+      <span>${el.spanDro}</span>
+      <p>${el.pProjectInfo}</p>
+    </div>
+  </div>
+    
+    
+    `;
+  });
+
+  const projectsJs = document.querySelector(".projects");
+  projectsJs.innerHTML = projectsElementArrayCvladi.join("");
+}
+
+getProjectsInmasiv();
+
+const projectLi = document.querySelectorAll(".project-li");
+const projectLiArray = Array.from(projectLi);
+// console.log(projectLiArray);
+
+const liXaziSpan = document.querySelectorAll(".li-xazi-span");
+const liXaziSpanArray = Array.from(liXaziSpan);
+console.log(liXaziSpanArray);
+
+let clearColorLi = null;
+let clearColorXazi = null;
+
+function liAndLixaziColorAddClasslist(indexFn) {
+  if (clearColorLi) {
+    clearColorLi.classList.remove("projectsLiJsActive");
+  }
+  projectLiArray[indexFn].classList.add("projectsLiJsActive");
+  clearColorLi = projectLiArray[indexFn];
+
+  if (clearColorXazi) {
+    clearColorXazi.classList.remove("projectsLiJsActiveSpan");
+  }
+  liXaziSpanArray[indexFn].classList.add("projectsLiJsActiveSpan");
+  clearColorXazi = liXaziSpanArray[indexFn];
+}
+
+projectLiArray.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    liAndLixaziColorAddClasslist(index);
+  });
+});

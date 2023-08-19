@@ -664,7 +664,6 @@ a {
 /* h4-div Latest Projects */
 
 .Latest-Projects-main {
-  border: solid red;
   height: 1000px;
   display: flex;
   flex-direction: column;
@@ -682,13 +681,12 @@ h4 {
   display: flex;
 
   justify-content: center;
-  border: solid red;
+
   column-gap: 30px;
   width: 90%;
 }
 
 .projects-name {
-  border: solid yellow;
   height: 400px;
   width: 30%;
   background: #15263e;
@@ -725,9 +723,22 @@ h4 {
   left: 10px;
 }
 
+/* javaskript klass list project > ul > li > span > span*/
+
+.projectsLiJsActiveSpan {
+  border: 0.5px solid #03e9f4 !important;
+  visibility: visible !important;
+}
+
 .projects-name > ul > li:hover {
   color: #e93656;
   cursor: pointer;
+}
+
+/* javaskript klass list project > ul > li */
+
+.projectsLiJsActive {
+  color: #03e9f4 !important;
 }
 
 .projects-name > ul > li:hover span span {
@@ -742,7 +753,6 @@ h4 {
 }
 
 .projects > div {
-  border: solid red;
   width: 100%;
   height: 350px;
   position: relative;
@@ -769,7 +779,7 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid red;
+  row-gap: 20px;
   width: 100%;
   height: 100%;
   visibility: hidden;
