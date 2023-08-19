@@ -219,6 +219,7 @@ const projectsElementArray = [
     iqonHeart: "icons/heart.svg",
     spanDro: "9 MONTS AGO",
     pProjectInfo: "3D Mockup Design",
+    filterMasiv: "work ideas",
   },
 
   {
@@ -228,6 +229,7 @@ const projectsElementArray = [
     iqonHeart: "icons/heart.svg",
     spanDro: "9 MONTS AGO",
     pProjectInfo: "3D Mockup Design",
+    filterMasiv: "work ideas",
   },
 
   {
@@ -237,6 +239,7 @@ const projectsElementArray = [
     iqonHeart: "icons/heart.svg",
     spanDro: "9 MONTS AGO",
     pProjectInfo: "3D Mockup Design",
+    filterMasiv: "work ideas",
   },
 
   {
@@ -246,6 +249,7 @@ const projectsElementArray = [
     iqonHeart: "icons/heart.svg",
     spanDro: "9 MONTS AGO",
     pProjectInfo: "3D Mockup Design",
+    filterMasiv: "Mockup",
   },
 
   {
@@ -255,6 +259,7 @@ const projectsElementArray = [
     iqonHeart: "icons/heart.svg",
     spanDro: "9 MONTS AGO",
     pProjectInfo: "3D Mockup Design",
+    filterMasiv: "Mockup",
   },
 
   {
@@ -264,8 +269,11 @@ const projectsElementArray = [
     iqonHeart: "icons/heart.svg",
     spanDro: "9 MONTS AGO",
     pProjectInfo: "3D Mockup Design",
+    filterMasiv: "Mockup",
   },
 ];
+
+const projectsJs = document.querySelector(".projects");
 
 function getProjectsInmasiv() {
   const projectsElementArrayCvladi = projectsElementArray.map((el, index) => {
@@ -285,7 +293,6 @@ function getProjectsInmasiv() {
     `;
   });
 
-  const projectsJs = document.querySelector(".projects");
   projectsJs.innerHTML = projectsElementArrayCvladi.join("");
 }
 
@@ -297,27 +304,85 @@ const projectLiArray = Array.from(projectLi);
 
 const liXaziSpan = document.querySelectorAll(".li-xazi-span");
 const liXaziSpanArray = Array.from(liXaziSpan);
-console.log(liXaziSpanArray);
+// console.log(liXaziSpanArray);
 
 let clearColorLi = null;
 let clearColorXazi = null;
 
-function liAndLixaziColorAddClasslist(indexFn) {
+function liAndLixaziColorAddClasslist(indexFnColor) {
   if (clearColorLi) {
     clearColorLi.classList.remove("projectsLiJsActive");
   }
-  projectLiArray[indexFn].classList.add("projectsLiJsActive");
-  clearColorLi = projectLiArray[indexFn];
+  projectLiArray[indexFnColor].classList.add("projectsLiJsActive");
+  clearColorLi = projectLiArray[indexFnColor];
 
   if (clearColorXazi) {
     clearColorXazi.classList.remove("projectsLiJsActiveSpan");
   }
-  liXaziSpanArray[indexFn].classList.add("projectsLiJsActiveSpan");
-  clearColorXazi = liXaziSpanArray[indexFn];
+  liXaziSpanArray[indexFnColor].classList.add("projectsLiJsActiveSpan");
+  clearColorXazi = liXaziSpanArray[indexFnColor];
+}
+
+function liClicisasMasivisElementebisGafiltvra() {
+  const filterDaMap = projectsElementArray
+    .filter((el) => {
+      return el.filterMasiv === "work ideas";
+    })
+    .map((el) => {
+      return `
+  
+          <div>
+             <img src="${el.bacgraundImg}" alt="${el.bacgraundImgAlt}" /> 
+          <div>
+            <div>
+               <img src="${el.iqonHeart}" alt="${el.iqonHeartAlt}" /> 
+             </div>
+             <span>${el.spanDro}</span>
+             <p>${el.pProjectInfo}</p>
+           </div>
+        </div>
+  
+  `;
+    });
+
+  projectsJs.innerHTML = filterDaMap.join("");
+}
+
+function liClickMockupFilter() {
+  const mockupFilter = projectsElementArray
+    .filter((el) => {
+      return el.filterMasiv === "Mockup";
+    })
+    .map((el) => {
+      return `
+    
+       <div>
+            <img src="${el.bacgraundImg}" alt="${el.bacgraundImgAlt}" /> 
+          <div>
+           <div>
+              <img src="${el.iqonHeart}" alt="${el.iqonHeartAlt}" /> 
+           </div>
+            <span>${el.spanDro}</span>
+            <p>${el.pProjectInfo}</p>
+          </div>
+       </div>
+    
+    `;
+    });
+
+  projectsJs.innerHTML = mockupFilter.join("");
 }
 
 projectLiArray.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     liAndLixaziColorAddClasslist(index);
+
+    if (index === 0) {
+      getProjectsInmasiv();
+    } else if (index === 1) {
+      liClicisasMasivisElementebisGafiltvra();
+    } else if (index === 2) {
+      liClickMockupFilter();
+    }
   });
 });
