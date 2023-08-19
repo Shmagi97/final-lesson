@@ -745,6 +745,8 @@ h4 {
   visibility: visible;
 }
 
+/* projects */
+
 .projects {
   height: 700px;
   width: 100%;
@@ -803,6 +805,58 @@ h4 {
 .projects > div > div > p {
   color: #ffffff;
   font-size: 23px;
+}
+
+/* Latest Articles */
+
+.latest-article-main {
+  border: solid red;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.latest-article-main > div {
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.latest-article-main > div > span {
+  color: #2ed279;
+  font-size: 13px;
+}
+
+h5 {
+  color: #2e2e2e;
+  font-size: 70px;
+}
+
+.latest-article-main > section {
+  border: solid red;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  /* column-gap: 10px; */
+}
+
+.latest-article-main > section > div {
+  border: solid black;
+  width: 40%;
+  height: 100%;
+}
+
+.section-gadasatani {
+  justify-content: flex-end;
+}
+
+.div-tarigi {
+  width: 100px !important;
 }
 
 /* droebiti */
