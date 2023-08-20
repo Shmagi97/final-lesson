@@ -810,8 +810,6 @@ h4 {
 /* Latest Articles */
 
 .latest-article-main {
-  border: solid red;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -819,7 +817,6 @@ h4 {
 }
 
 .latest-article-main > div {
-  border: solid;
   display: flex;
   flex-direction: column;
   height: 200px;
@@ -838,18 +835,17 @@ h5 {
 }
 
 .latest-article-main > section {
-  border: solid red;
-  height: 300px;
+  height: 490px;
   width: 100%;
   display: flex;
-  /* column-gap: 10px; */
 }
 
 .latest-article-main > section > div {
-  border: solid black;
-  width: 40%;
+  width: 45%;
   height: 100%;
 }
+
+/* daseleqtebuli mTliani elementebis erteulebis gadasatanad  */
 
 .section-gadasatani {
   justify-content: flex-end;
@@ -857,6 +853,169 @@ h5 {
 
 .div-tarigi {
   width: 100px !important;
+  background: #15263e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-tarigi > span {
+  color: #e93656 !important;
+  transform: rotate(-90deg);
+
+  /* font-size: 30px !important; */
+}
+
+/* daseleqtebuli mTliani elementebis erteulebis gadasatanad end */
+
+.section-gadasatani > div:first-child {
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  row-gap: 20px;
+}
+
+.section-gadasatani > div:first-child div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* calke daseleqteba begraundistvis */
+
+.bacground-color-solo {
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 70px;
+  row-gap: 20px;
+  width: 40% !important;
+  background: #fafafa !important;
+}
+
+.bacground-color-solo > div {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-gadasatani > div > div {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.section-gadasatani > div > span {
+  color: #888888;
+  font-size: 14px;
+  letter-spacing: 1.12px;
+}
+
+h6 {
+  color: #161616;
+  font-size: 40px;
+}
+
+.section-gadasatani > div p {
+  color: #494949;
+  font-size: 16px;
+  letter-spacing: 0.48px;
+}
+
+.latest-article-main > section > div:last-child {
+  background: #e1e0dc;
+}
+
+.latest-article-main > section:nth-child(3) div:first-child {
+  background: #e1e0dc;
+}
+
+/* Rosa-Team-Main */
+
+.Rosa-Team-Main {
+  height: 500px;
+  width: 80%;
+  margin: 100px auto;
+}
+
+.Rosa-Team-Main > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Rosa-Team-Main > div:first-child span {
+  color: #2ed279;
+  font-size: 14px;
+}
+
+h7 {
+  color: #262526;
+  font-size: 70px;
+}
+
+.Rosa-Team-Main > section {
+  margin-top: 50px;
+
+  height: 250px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Rosa-Team-Main > section > div {
+  border: solid red;
+  width: 230px;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.Rosa-Team-Main > section > div > div {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  visibility: visible;
+  background: #15263e;
+}
+
+h8 {
+  visibility: hidden;
+}
+
+.Rosa-Team-Main > section > div > div > p {
+  visibility: hidden;
+}
+
+.Rosa-Team-Main > section > div > div:hover {
+  width: 230px;
+  height: 230px;
+  background: #ffffff;
+  cursor: pointer;
+  border: 4px solid #e93656;
+}
+
+.Rosa-Team-Main > section > div > div:hover h8 {
+  visibility: visible;
+}
+
+.Rosa-Team-Main > section > div > div:hover p {
+  visibility: visible;
 }
 
 /* droebiti */
