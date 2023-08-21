@@ -1018,6 +1018,143 @@ h8 {
   visibility: visible;
 }
 
+/* contact-us-main */
+
+.contact-us-main {
+  height: 660px;
+  width: 100%;
+  background-size: 100%;
+  background-clip: border-box;
+}
+
+.contact-us-main-div {
+  height: 100%;
+  width: 100%;
+
+  background: #000000;
+  opacity: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-us-main-div > section:first-child {
+  height: 150px;
+}
+
+.contact-us-main-div > section:first-child div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+}
+
+h9 {
+  color: #ffffff;
+  font-size: 45px;
+}
+
+.contact-us-main-div > section:first-child p {
+  color: #b7b5b5;
+  font-size: 17px;
+  letter-spacing: 0.51px;
+}
+
+.contact-input-form {
+  width: 70%;
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "zeda1 zeda2 zeda3"
+    "qveda qveda qveda"
+    "submitSection submitSection submitSection";
+}
+
+.div1 {
+  grid-area: zeda1;
+
+  height: 50px;
+}
+
+.div2 {
+  grid-area: zeda2;
+
+  height: 50px;
+}
+
+.div3 {
+  grid-area: zeda3;
+
+  height: 50px;
+}
+
+.div4 {
+  grid-area: qveda;
+
+  height: 110px;
+}
+
+.section4 {
+  grid-area: submitSection;
+}
+
+.contact-us-main-div > form > section {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact-us-main-div > form > section > button {
+  border: 2px solid #e93656;
+  background: #000000;
+  height: 50px;
+  width: 187px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-us-main-div > form > section > button > span {
+  color: #e93656;
+  font-size: 12px;
+  letter-spacing: 0.96px;
+}
+
+.contact-input-form > div > input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 15px;
+  border: none;
+  border-style: none;
+  text-align: center;
+}
+
+.contact-input-form > div > input::placeholder {
+  color: #515151;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+}
+
+.text-area {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  color: #4c562d;
+  padding: 20px 20px;
+}
+
+.text-area::placeholder {
+  color: #515151;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+}
+
 /* droebiti */
 .iqon-droebiti > img {
   width: 50px;
