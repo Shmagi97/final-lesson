@@ -223,17 +223,18 @@ const projectsElementArray = [
   },
 
   {
-    bacgraundImg: "foto/projeqt 2.png",
+    bacgraundImg: "foto/geo.ge2.png",
     bacgraundImgAlt: "projeqt 2",
     iqonHeartAlt: "heart",
     iqonHeart: "icons/heart.svg",
     spanDro: "9 MONTS AGO",
     pProjectInfo: "3D Mockup Design",
+
     filterMasiv: "work ideas",
   },
 
   {
-    bacgraundImg: "foto/projeqt 3.png",
+    bacgraundImg: "foto/geo.ge3.png",
     bacgraundImgAlt: "projeqt 3",
     iqonHeartAlt: "heart",
     iqonHeart: "icons/heart.svg",
@@ -243,7 +244,7 @@ const projectsElementArray = [
   },
 
   {
-    bacgraundImg: "foto/projeqt 4.webp",
+    bacgraundImg: "foto/geo.ge4.png",
     bacgraundImgAlt: "projeqt 4",
     iqonHeartAlt: "heart",
     iqonHeart: "icons/heart.svg",
