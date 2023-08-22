@@ -1167,7 +1167,7 @@ h9 {
   justify-content: center;
   align-items: center;
   background: radial-gradient(rgb(0, 255, 106), rgb(70, 0, 249));
-  display: none;
+  visibility: hidden;
   border-radius: 70px 0px 70px 0px;
 }
 
@@ -1195,12 +1195,12 @@ h9 {
   font-size: 20px;
   cursor: pointer;
 
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 
 .form-modal > div > div > span:hover {
-  border: dashed yellow;
+  border: dashed rgb(7, 19, 246);
   border-radius: 50%;
   scale: 1.5;
   transform: rotate(180deg);
@@ -1215,7 +1215,7 @@ h9 {
 /* javaskrip modal action */
 
 .form-modalJs {
-  display: block !important;
+  visibility: visible !important;
 }
 
 /* droebiti */

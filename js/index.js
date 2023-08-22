@@ -395,6 +395,9 @@ const userEmailJs = document.querySelector("#userEmail");
 const userWebsiteJs = document.querySelector("#userWebsite");
 const userMessageJs = document.querySelector(".text-area");
 const contactInputForm = document.querySelector(".contact-input-form");
+// form-modal
+const formModal = document.querySelector(".form-modal");
+const modalCloseBtn = document.querySelector(".modal-close-btn");
 
 function creatMessageUser(userMessageFnParametr) {
   fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -429,9 +432,14 @@ contactInputForm.addEventListener("submit", (el) => {
   };
 
   creatMessageUser(userMessage);
+
+  if (userMessage) {
+    formModal.classList.add("form-modalJs");
+  } else {
+    formModal.classList.remove("form-modalJs");
+  }
+  modalCloseBtn.addEventListener("click", () => {
+    formModal.classList.remove("form-modalJs");
+  });
   contactInputForm.reset();
 });
-
-// form-modal
-
-const formModal = document.querySelector(".form-modal");
