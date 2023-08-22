@@ -213,13 +213,13 @@ scrolStartAddElementsInHtmlFn();
 
 const projectsElementArray = [
   {
-    bacgraundImg: "foto/projeqt 1.jfif",
+    bacgraundImg: "foto/geo.ge.png",
     bacgraundImgAlt: "projeqt 1",
     iqonHeartAlt: "heart",
     iqonHeart: "icons/heart.svg",
     spanDro: "9 MONTS AGO",
     pProjectInfo: "3D Mockup Design",
-    filterMasiv: "work ideas",
+    filterMasiv: "geo.ge",
   },
 
   {
@@ -373,6 +373,31 @@ function liClickMockupFilter() {
   projectsJs.innerHTML = mockupFilter.join("");
 }
 
+function geoGeFilter() {
+  const geoGe = projectsElementArray
+    .filter((el) => {
+      return el.filterMasiv === "geo.ge";
+    })
+    .map((el) => {
+      return `
+    
+    <div>
+    <img src="${el.bacgraundImg}" alt="${el.bacgraundImgAlt}" /> 
+  <div>
+   <div>
+      <img src="${el.iqonHeart}" alt="${el.iqonHeartAlt}" /> 
+   </div>
+    <span>${el.spanDro}</span>
+    <p>${el.pProjectInfo}</p>
+  </div>
+</div>
+    
+    `;
+    });
+
+  projectsJs.innerHTML = geoGe.join("");
+}
+
 projectLiArray.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     liAndLixaziColorAddClasslist(index);
@@ -383,6 +408,8 @@ projectLiArray.forEach((btn, index) => {
       liClicisasMasivisElementebisGafiltvra();
     } else if (index === 2) {
       liClickMockupFilter();
+    } else if (index === 3) {
+      geoGeFilter();
     }
   });
 });
