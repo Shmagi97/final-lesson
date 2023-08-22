@@ -381,7 +381,7 @@ function geoGeFilter() {
     .map((el) => {
       return `
     
-    <div>
+    <div class="geo-ge-in-js">
     <img src="${el.bacgraundImg}" alt="${el.bacgraundImgAlt}" /> 
   <div>
    <div>
@@ -410,6 +410,12 @@ projectLiArray.forEach((btn, index) => {
       liClickMockupFilter();
     } else if (index === 3) {
       geoGeFilter();
+      const geoGeLink = document.querySelector(".geo-ge-in-js");
+      geoGeLink.addEventListener("click", () => {
+        window.location = "";
+        // linkis ar qonis gamo vtoveb cariels, am programidan window locaiSeni imushavebs mxolod mashin roca
+        // moxdeba index === 3 is anu geo gis li tegze kliki
+      });
     }
   });
 });
