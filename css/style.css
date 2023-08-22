@@ -1030,7 +1030,7 @@ h8 {
 .contact-us-main-div {
   height: 100%;
   width: 100%;
-
+  position: relative;
   background: #000000;
   opacity: 70%;
   display: flex;
@@ -1117,6 +1117,7 @@ h9 {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .contact-us-main-div > form > section > button > span {
@@ -1153,6 +1154,68 @@ h9 {
   color: #515151;
   font-size: 15px;
   letter-spacing: 0.4px;
+}
+
+/* form-modal */
+
+.form-modal {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(rgb(0, 255, 106), rgb(70, 0, 249));
+  display: none;
+  border-radius: 70px 0px 70px 0px;
+}
+
+.form-modal > div {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-modal > div > div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-modal > div > div > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  margin: 20px 20px 0px 0px;
+  font-size: 20px;
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+}
+
+.form-modal > div > div > span:hover {
+  border: dashed yellow;
+  border-radius: 50%;
+  scale: 1.5;
+  transform: rotate(180deg);
+  transition: 0.1s;
+}
+
+.form-modal > div > p {
+  font-size: 30px;
+  color: #000000;
+}
+
+/* javaskrip modal action */
+
+.form-modalJs {
+  display: block !important;
 }
 
 /* droebiti */

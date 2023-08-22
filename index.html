@@ -431,13 +431,13 @@
           method="POST"
         >
           <div class="div1">
-            <input type="text" placeholder="Your Name*" />
+            <input type="text" placeholder="Your Name*" id="userName" />
           </div>
           <div class="div2">
-            <input type="email" placeholder="Email Address*" />
+            <input type="email" placeholder="Email Address*" id="userEmail" />
           </div>
           <div class="div3">
-            <input type="text" placeholder="Your Website*" />
+            <input type="text" placeholder="Your Website*" id="userWebsite" />
           </div>
           <div class="div4">
             <textarea
@@ -447,6 +447,7 @@
               cols="30"
               rows="10"
               placeholder="Message*"
+              id="userMessageTextArea"
             ></textarea>
           </div>
           <section class="section4">
@@ -455,6 +456,16 @@
             </button>
           </section>
         </form>
+        <section class="form-modal">
+          <div>
+            <div><span>X</span></div>
+
+            <p>
+              Thank you for getting in touch! We appreciate you contacting us
+            </p>
+            <p></p>
+          </div>
+        </section>
       </div>
     </main>
 

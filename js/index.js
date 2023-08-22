@@ -386,3 +386,52 @@ projectLiArray.forEach((btn, index) => {
     }
   });
 });
+
+// useris informaciis gagzavna serverze
+// davalebaSi arsebuli serveri isev igive mizeziT miblokavda amitom serveri shevcvale
+
+const userNameJs = document.querySelector("#userName");
+const userEmailJs = document.querySelector("#userEmail");
+const userWebsiteJs = document.querySelector("#userWebsite");
+const userMessageJs = document.querySelector(".text-area");
+const contactInputForm = document.querySelector(".contact-input-form");
+
+function creatMessageUser(userMessageFnParametr) {
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify(userMessageFnParametr),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    })
+
+    .catch((error) => {
+      console.log(error);
+    })
+
+    .finally(() => {
+      console.log("finaly");
+    });
+}
+
+contactInputForm.addEventListener("submit", (el) => {
+  el.preventDefault();
+
+  const userMessage = {
+    name: userNameJs.value,
+    email: userEmailJs.value,
+    website: userWebsiteJs.value,
+    message: userMessageJs.value,
+  };
+
+  creatMessageUser(userMessage);
+  contactInputForm.reset();
+});
+
+// form-modal
+
+const formModal = document.querySelector(".form-modal");
