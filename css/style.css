@@ -996,6 +996,15 @@ h7 {
   text-align: center;
   visibility: visible;
   background: #15263e;
+  position: relative;
+}
+
+/* image */
+
+.Rosa-Team-Main > section > div > div > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 h8 {
@@ -1020,6 +1029,10 @@ h8 {
 
 .Rosa-Team-Main > section > div > div:hover p {
   visibility: visible;
+}
+
+.Rosa-Team-Main > section > div > div:hover img {
+  visibility: hidden;
 }
 
 /* contact-us-main */
@@ -1289,13 +1302,4 @@ footer > div {
 footer > div > p {
   color: #a0a8b7;
   font-size: 15px;
-}
-
-/* droebiti */
-.iqon-droebiti > img {
-  width: 50px;
-  height: 50px;
-  color: red;
-  background: black;
-  margin-top: 500px;
 }
