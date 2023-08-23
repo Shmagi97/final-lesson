@@ -54,14 +54,14 @@ linerSkilsSpanArray.forEach((el, indexi) => {
 
 const rekomendationInfo = [
   {
-    info: "Senior developers have a deep understanding of multiple technologies and frameworks, They can architect and design complex systems, making informed technical decisions.",
+    info: "Senior developers have a deep understanding of multiple technologies and frameworks. ",
     image: "foto/developer.jpg",
     name: "Alison brie",
     profesion: "Senior developer",
   },
 
   {
-    info: "Back-end development involves building the server-side logic and databases that power a web application,  A full stack developer skilled in back-end development is proficient in server-side languages (e.g., Python, Java, Ruby, Node.js) and frameworks.",
+    info: "Back-end development involves building the server-side logic and databases that power a web application.  ",
     image: "foto/back and developer.jfif",
     name: "Nicholas Baca",
     profesion: "Back-end developer",

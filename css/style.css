@@ -510,10 +510,9 @@ a {
 }
 
 .servis-hover-info-section > div {
-  min-width: 200px;
-
+  min-width: 190px;
+  width: 100%;
   height: 360px;
-
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1348,4 +1347,128 @@ footer > div {
 footer > div > p {
   color: #a0a8b7;
   font-size: 15px;
+}
+
+/* მედია რექვერები  */
+
+@media (max-width: 1200px) {
+  .servis-hover-info-main {
+    height: 1500px;
+  }
+
+  .servis-hover-info-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 930px) {
+    .my-info-div-cont {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .my-info-cont {
+      align-items: center;
+    }
+
+    .main-my-info {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+
+    .section-my-info {
+      text-align: left;
+    }
+
+    .my-image-cont {
+      width: 60%;
+    }
+
+    .section-my-info > div:nth-child(3) {
+      align-items: start;
+    }
+
+    .section-number-adress-email > div {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 30px;
+      text-align: center;
+    }
+
+    .section-number-adress-email {
+      justify-content: space-between;
+    }
+
+    .servis-hover-info-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects > div > div > p {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 632px) {
+    .section-number-adress-email > div > div:first-child {
+      width: 65px;
+      height: 65px;
+    }
+
+    .section-number-adress-email > div > div:last-child span,
+    a {
+      font-size: 15px;
+    }
+
+    .sections-cont {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+
+    .projects-name {
+      width: 100%;
+      height: 70px;
+      justify-content: unset;
+    }
+
+    .projects-name > ul {
+      flex-direction: unset;
+      width: 100%;
+      justify-content: space-around;
+    }
+
+    .projects-name > ul > li {
+      font-size: 15px;
+    }
+
+    .projects-name > ul > li > span {
+      display: none;
+    }
+
+    .Latest-Projects-main {
+      height: 1600px;
+      justify-content: unset;
+      padding: 100px 0;
+    }
+
+    .projects {
+      grid-template-columns: auto auto;
+    }
+
+    .Rosa-Team-Main > section {
+      display: grid;
+      grid-template-columns: auto auto;
+      margin-top: 100px;
+    }
+
+    .Rosa-Team-Main {
+      height: 1000px;
+    }
+
+    .my-info-cont > div > h1 {
+      font-size: 35px;
+    }
+
+    .bacground-image-section > div {
+      column-gap: 20px;
+    }
+  }
 }
