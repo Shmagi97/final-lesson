@@ -217,9 +217,9 @@ const projectsElementArray = [
     bacgraundImgAlt: "projeqt 1",
     iqonHeartAlt: "heart",
     iqonHeart: "icons/heart.svg",
-    spanDro: "9 MONTS AGO",
-    pProjectInfo: "3D Mockup Design",
-    filterMasiv: "geo.ge",
+    spanDro: "1 MONTS AGO",
+    pProjectInfo: "სოციალური საიტი",
+    filterMasiv: "work ideas",
   },
 
   {
@@ -227,10 +227,9 @@ const projectsElementArray = [
     bacgraundImgAlt: "projeqt 2",
     iqonHeartAlt: "heart",
     iqonHeart: "icons/heart.svg",
-    spanDro: "9 MONTS AGO",
-    pProjectInfo: "3D Mockup Design",
-
-    filterMasiv: "work ideas",
+    spanDro: "1 MONTS AGO",
+    pProjectInfo: "სოციალური საიტი",
+    filterMasiv: "geo.ge",
   },
 
   {
@@ -238,8 +237,8 @@ const projectsElementArray = [
     bacgraundImgAlt: "projeqt 3",
     iqonHeartAlt: "heart",
     iqonHeart: "icons/heart.svg",
-    spanDro: "9 MONTS AGO",
-    pProjectInfo: "3D Mockup Design",
+    spanDro: "1 MONTS AGO",
+    pProjectInfo: "სოციალური საიტი",
     filterMasiv: "work ideas",
   },
 
@@ -248,9 +247,9 @@ const projectsElementArray = [
     bacgraundImgAlt: "projeqt 4",
     iqonHeartAlt: "heart",
     iqonHeart: "icons/heart.svg",
-    spanDro: "9 MONTS AGO",
-    pProjectInfo: "3D Mockup Design",
-    filterMasiv: "Mockup",
+    spanDro: "1 MONTS AGO",
+    pProjectInfo: "სოციალური საიტი",
+    filterMasiv: "work ideas",
   },
 
   {
@@ -279,7 +278,7 @@ const projectsJs = document.querySelector(".projects");
 function getProjectsInmasiv() {
   const projectsElementArrayCvladi = projectsElementArray.map((el, index) => {
     return `
-    <div>
+    <div class="geoGeJs">
     <img src="${el.bacgraundImg}" alt="${el.bacgraundImgAlt}" /> 
     <div>
       <div>
@@ -295,6 +294,19 @@ function getProjectsInmasiv() {
   });
 
   projectsJs.innerHTML = projectsElementArrayCvladi.join("");
+
+  function linkGeoGe(selector) {
+    const geoGeLink = document.querySelectorAll(selector);
+    const geoGeLinkArray = Array.from(geoGeLink);
+
+    geoGeLinkArray.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        window.location = "https://shmagi97.github.io/soc-saiti/";
+      });
+    });
+  }
+
+  linkGeoGe(".geoGeJs");
 }
 
 getProjectsInmasiv();
@@ -332,7 +344,7 @@ function liClicisasMasivisElementebisGafiltvra() {
     .map((el) => {
       return `
   
-          <div>
+          <div class="geo-ge-in-js">
              <img src="${el.bacgraundImg}" alt="${el.bacgraundImgAlt}" /> 
           <div>
             <div>
@@ -347,6 +359,19 @@ function liClicisasMasivisElementebisGafiltvra() {
     });
 
   projectsJs.innerHTML = filterDaMap.join("");
+
+  function linkGeoGe(selector) {
+    const geoGeLink = document.querySelectorAll(selector);
+    const geoGeLinkArray = Array.from(geoGeLink);
+
+    geoGeLinkArray.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        window.location = "https://shmagi97.github.io/soc-saiti/";
+      });
+    });
+  }
+
+  linkGeoGe(".geo-ge-in-js");
 }
 
 function liClickMockupFilter() {
@@ -372,6 +397,7 @@ function liClickMockupFilter() {
     });
 
   projectsJs.innerHTML = mockupFilter.join("");
+  // console.log(mockupFilter);
 }
 
 function geoGeFilter() {
@@ -397,6 +423,19 @@ function geoGeFilter() {
     });
 
   projectsJs.innerHTML = geoGe.join("");
+
+  function linkGeoGe(selector) {
+    const geoGeLink = document.querySelectorAll(selector);
+    const geoGeLinkArray = Array.from(geoGeLink);
+
+    geoGeLinkArray.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        window.location = "https://shmagi97.github.io/soc-saiti/";
+      });
+    });
+  }
+
+  linkGeoGe(".geo-ge-in-js");
 }
 
 projectLiArray.forEach((btn, index) => {
@@ -411,12 +450,6 @@ projectLiArray.forEach((btn, index) => {
       liClickMockupFilter();
     } else if (index === 3) {
       geoGeFilter();
-      const geoGeLink = document.querySelector(".geo-ge-in-js");
-      geoGeLink.addEventListener("click", () => {
-        window.location = "";
-        // linkis ar qonis gamo vtoveb cariels, am programidan window locaiSeni imushavebs mxolod mashin roca
-        // moxdeba index === 3 is anu geo gis li tegze kliki
-      });
     }
   });
 });
