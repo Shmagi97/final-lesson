@@ -6,17 +6,16 @@
 
 .header {
   width: 100%;
-  height: 972px;
+  height: auto;
   background: #dddddd;
   display: flex;
   flex-direction: column;
-
+  padding: 50px 0px;
   justify-content: space-around;
 }
 
 .had-text-cont {
   width: 95%;
-  height: 221px;
 
   display: flex;
   justify-content: space-between;
@@ -28,7 +27,6 @@
   padding: 10px 10px;
   height: 90px;
   display: inline-block;
-
   overflow: hidden;
   transition: 0.5s;
 }
@@ -163,7 +161,11 @@ h2::after {
 .my-info-div-cont {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
 }
 
 .my-info-cont {
@@ -273,10 +275,11 @@ h2::after {
 
 .main-my-info {
   width: 100%;
-  margin-top: 100px;
+  padding: 50px 0px;
   display: flex;
-  column-gap: 30px;
-
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
   align-items: center;
 }
 
@@ -439,13 +442,15 @@ h2::after {
 
 .section-number-adress-email {
   width: 100%;
-  height: 210px;
+  height: auto;
   background: #131a36;
   margin-top: 100px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 30px;
+  gap: 30px;
+  padding: 30px 0px;
 }
 
 /*seqciis divis shvilobili yvela pirveli divi firs chaildi */
@@ -495,8 +500,8 @@ a {
 
 .servis-hover-info-main {
   width: 100%;
-  height: 900px;
-
+  height: auto;
+  padding: 100px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -505,7 +510,7 @@ a {
 .servis-hover-info-section {
   width: 70%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 5px;
 }
 
@@ -661,12 +666,13 @@ a {
 /* h4-div Latest Projects */
 
 .Latest-Projects-main {
-  height: 1000px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 30px;
+  padding: 50px 0px;
 }
 
 h4 {
@@ -786,10 +792,10 @@ h4 {
 /* projects */
 
 .projects {
-  height: 700px;
+  height: auto;
   width: 100%;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .projects > div {
@@ -1351,7 +1357,7 @@ footer > div > p {
 
 /* მედია რექვერები  */
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .servis-hover-info-main {
     height: 1500px;
   }
@@ -1471,4 +1477,4 @@ footer > div > p {
       column-gap: 20px;
     }
   }
-}
+} */
