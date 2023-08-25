@@ -162,16 +162,13 @@ h2::after {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  row-gap: 30px;
+  gap: 30px;
 }
 
 .my-info-cont {
-  width: 682.07px;
-  height: 292.27px;
-
+  height: auto;
   display: flex;
   flex-direction: column;
   row-gap: 30px;
@@ -250,9 +247,9 @@ h2::after {
   width: 100%;
   height: 100%;
   position: absolute;
-  object-fit: cover;
+  object-fit: contain;
 
-  border-radius: 4%;
+  border-radius: 24%;
 }
 
 .started-position-img {
@@ -685,13 +682,15 @@ h4 {
 
   justify-content: center;
 
-  column-gap: 30px;
+  gap: 30px;
   width: 90%;
 }
 
 .projects-name {
   height: 400px;
-  width: 30%;
+  max-width: 200px;
+  min-width: 200px;
+  width: 100%;
   background: #15263e;
   display: flex;
   justify-content: center;
@@ -987,7 +986,7 @@ h6 {
 /* Rosa-Team-Main */
 
 .Rosa-Team-Main {
-  height: 500px;
+  height: auto;
   width: 80%;
   margin: 100px auto;
 }
@@ -1011,9 +1010,9 @@ h7 {
 
 .Rosa-Team-Main > section {
   margin-top: 50px;
-
-  height: 250px;
+  height: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -1357,6 +1356,167 @@ footer > div > p {
 
 /* მედია რექვერები  */
 
+@media (min-width: 1140px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1450px) {
+  .servis-hover-info-section {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1000px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 920px) {
+  .section-number-adress-email > div > div:first-child {
+    width: 50px;
+    height: 50px;
+  }
+
+  .section-number-adress-email > div > div:last-child span,
+  a {
+    font-size: 10px;
+  }
+
+  .section-number-adress-email > div > div > a > img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .sections-cont {
+    flex-direction: column;
+  }
+
+  .projects-name {
+    max-width: unset;
+    width: 100%;
+    height: 50px;
+  }
+
+  .projects-name > ul {
+    flex-direction: unset;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .projects-name > ul > li > span > span {
+    display: none;
+  }
+
+  .my-info-cont {
+    text-align: center;
+  }
+
+  .section-my-info {
+    text-align: left;
+  }
+
+  .section-my-info > div:nth-child(3) {
+    align-items: start;
+  }
+
+  .my-info-iqon-cont {
+    justify-content: center;
+    padding: 50px 0px;
+  }
+
+  @media (max-width: 630px) {
+    .section-gadasatani > div:first-child {
+      padding: 15px;
+    }
+
+    .latest-article-main {
+      row-gap: 10px;
+    }
+
+    .latest-article-main > section {
+      height: unset;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 10px;
+    }
+
+    .latest-article-main > section > div {
+      width: 100%;
+    }
+
+    .div-tarigi {
+      width: 100% !important;
+      height: 100px !important;
+    }
+
+    .div-tarigi > span {
+      transform: unset;
+      font-size: 25px !important;
+    }
+
+    @media (max-width: 545px) {
+      .section-number-adress-email > div {
+        flex-direction: column;
+        row-gap: 30px;
+      }
+
+      .bacground-image-section {
+        height: unset;
+        padding: 50px 0px;
+      }
+
+      .bacground-image-section > div {
+        flex-direction: column;
+        row-gap: 50px;
+      }
+
+      .bacground-image-section > div p {
+        max-width: 70%;
+      }
+
+      .bacground-image-section > div > div:last-child {
+        flex-direction: unset;
+        column-gap: 30px;
+      }
+
+      .projects-name {
+        height: auto;
+        padding: 20px;
+      }
+
+      .projects-name > ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 30px;
+      }
+
+      .contact-us-main-div > section:first-child div {
+        text-align: center;
+      }
+
+      h4 {
+        text-align: center;
+        font-size: 50px;
+      }
+
+      h5 {
+        text-align: center;
+        font-size: 50px;
+      }
+
+      h7 {
+        text-align: center;
+        font-size: 50px;
+      }
+
+      h9 {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
 /* @media (max-width: 1200px) {
   .servis-hover-info-main {
     height: 1500px;
@@ -1392,6 +1552,8 @@ footer > div > p {
     .section-my-info > div:nth-child(3) {
       align-items: start;
     }
+
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
     .section-number-adress-email > div {
       flex-direction: column;

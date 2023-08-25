@@ -207,6 +207,9 @@ function scrolStartAddElementsInHtmlFn() {
   });
 }
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// responsivze am funqciis sqrolze gamodzaxeba ar xdeba sworad addElementsInHtmlFn();
+
 scrolStartAddElementsInHtmlFn();
 
 // project elements
