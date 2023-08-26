@@ -231,7 +231,7 @@ h2::after {
 
 .my-info-end-cont > div > div {
   border: solid red;
-  width: 300px;
+  width: 90%;
 }
 
 .my-image-cont {
@@ -523,6 +523,7 @@ a {
   text-align: center;
   cursor: pointer;
   background: #ececec;
+  padding: 0px 10px;
 }
 
 .servis-hover-info-section > div:hover {
@@ -556,7 +557,8 @@ a {
 
 .bacground-image-section {
   width: 100%;
-  height: 570px;
+  height: auto;
+  padding: 50px 0px;
   background-size: 100%;
   background-clip: border-box;
   display: flex;
@@ -1079,7 +1081,7 @@ h8 {
 /* contact-us-main */
 
 .contact-us-main {
-  height: 660px;
+  height: auto;
   width: 100%;
   background-size: 100%;
   background-clip: border-box;
@@ -1106,6 +1108,7 @@ h8 {
   flex-direction: column;
   align-items: center;
   row-gap: 15px;
+  padding: 10px;
 }
 
 h9 {
@@ -1288,7 +1291,7 @@ h9 {
 /* footer */
 
 footer {
-  height: 500px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1455,6 +1458,10 @@ footer > div > p {
       font-size: 25px !important;
     }
 
+    .my-image-cont {
+      width: 70%;
+    }
+
     @media (max-width: 545px) {
       .section-number-adress-email > div {
         flex-direction: column;
@@ -1462,7 +1469,6 @@ footer > div > p {
       }
 
       .bacground-image-section {
-        height: unset;
         padding: 50px 0px;
       }
 
@@ -1512,6 +1518,62 @@ footer > div > p {
 
       h9 {
         font-size: 30px;
+      }
+
+      footer > div > p {
+        font-size: 10px;
+        text-align: center;
+      }
+
+      .my-info-cont > p {
+        font-size: 35px;
+      }
+
+      .my-info-cont > div > h1 {
+        font-size: 40px;
+      }
+
+      .my-info-end-cont > div {
+        width: 200px;
+      }
+
+      .my-info-end-cont > div > p {
+        font-size: 20px;
+      }
+
+      .my-image-cont {
+        width: 70%;
+      }
+
+      .text-right {
+        width: 150px;
+        height: 161px;
+      }
+
+      .text-right > h3 {
+        font-size: 30px;
+      }
+
+      .text-right > div {
+        font-size: 130px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .main-my-info {
+        justify-content: flex-start;
+      }
+
+      .section-my-info {
+        width: 90%;
+        padding: 0px 10px;
+      }
+
+      .my-skills {
+        width: 90%;
+        padding: 0px 10px;
       }
     }
   }

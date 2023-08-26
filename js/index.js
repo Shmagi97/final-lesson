@@ -31,14 +31,19 @@ function myImageFn() {
 }
 setInterval(myImageFn, 5000);
 
-// skills
+// skills sqroll
 
 const linerSkilsSpan = document.querySelectorAll(".liner-skils-span");
 const linerSkilsSpanArray = Array.from(linerSkilsSpan);
 
 function scrollAnimation(elemenForEach) {
   window.addEventListener("scroll", () => {
-    if (window.scrollY >= 700 && window.scrollY <= 1100) {
+    // getBoundingClientRect - ეს ფუნქცია ქმნის მართკუტხედს რომლის შიგნიტაც ექცევა სქროლისას ხილული ელემენტები
+    const elementRect = elemenForEach.getBoundingClientRect();
+    const xiluliZona =
+      elementRect.top >= 0 && elementRect.top <= window.innerHeight;
+
+    if (xiluliZona) {
       elemenForEach.classList.add("active-animation");
     } else {
       elemenForEach.classList.remove("active-animation");
@@ -107,17 +112,18 @@ function addElementsInHtmlFn() {
 
   addRekomendationElementInHtmlStart.classList.add("divJsActive");
 
-  // spanClick- სპან ელემენტები რომლის დახატვაც მოხდამასივიდან addRekomendationElementInHtmlStart- ში არსებული
-  //სპან ელემენტები დავასელექთე რათა შემძლებოდა მასზე ფორიჩიშ გამოყენება
-  //
+  // spanClick- სპან ელემენტები რომლის დახატვაც მოხდა მასივიდან addRekomendationElementInHtmlStart- ში არსებული
+  //სპან ელემენტები დავასელექთე რათა შემძლებოდა მასზე ფორიჩის გამოყენება
 
   const spanClick = addRekomendationElementInHtmlStart.querySelectorAll(
     ".rekomendation-span-click"
   );
   const spanClickArray = Array.from(spanClick);
 
-  // ამ forEach- ში მოთავსებული ფუნქცია rekomendationInfoMapFn უზრუნველყოფს addElementsInHtmlFn-იტ დახატულ ელემენტების სპანზე კლიკით
-  // ელემენტების ცვლილებას, თავისმხრივ ამ ფუნქციის შესრულებისას bacgroundImageSection-ში გადაეცემა ახალი სპან ელემენტები რომელზეც ასევე გემოყენებულია
+  // ამ forEach- ში მოთავსებული ფუნქცია rekomendationInfoMapFn უზრუნველყოფს addElementsInHtmlFn-იტ
+  //დახატულ ელემენტების სპანზე კლიკით
+  // ელემენტების ცვლილებას, თავისმხრივ ამ ფუნქციის შესრულებისას bacgroundImageSection-ში
+  //გადაეცემა ახალი სპან ელემენტები რომელზეც ასევე გემოყენებულია
   // forEach-ი სპანებზე bacgroundImageSection-ში ახალი ელემენტების ჩასახატად
 
   let lastAddedRecommendation = null;
@@ -155,8 +161,10 @@ function addElementsInHtmlFn() {
 
       bacgroundImageSection.appendChild(addRekomendationElementInHtml);
 
-      // სპანზე პირველი კლიკისას lastAddedRecommendation- არის ნალი მეორე კლიკის შემდეგ  lastAddedRecommendation = addRekomendationElementInHtml; სინტაქსით
-      // lastAddedRecommendation გადაეცემა ის ელემენტები რომელის სპანზე კლიკიც მოხდა ოღონდ 1 კლიკით ადრე, ანუ ის ელემენტები რომელიც წასაშლელია.
+      // სპანზე პირველი კლიკისას lastAddedRecommendation- არის ნალი მეორე კლიკის შემდეგ
+      // lastAddedRecommendation = addRekomendationElementInHtml; სინტაქსით
+      // lastAddedRecommendation გადაეცემა ის ელემენტები რომელის სპანზე კლიკიც მოხდა
+      //ოღონდ 1 კლიკით ადრე, ანუ ის ელემენტები რომელიც წასაშლელია.
 
       lastAddedRecommendation = addRekomendationElementInHtml;
 
@@ -180,37 +188,45 @@ function addElementsInHtmlFn() {
 
     span.addEventListener("click", () => {
       rekomendationInfoMapFn(index);
-      // ეს სინტაქსი უზრუნველყოფს ფუნქცია addElementsInHtmlFn - ში დახატული პირველადი ელემენტების none-ს, ვინაიდან მისი დინამიურად ამორება არ არის საჭირო
+      // ეს სინტაქსი უზრუნველყოფს ფუნქცია addElementsInHtmlFn - ში დახატული პირველადი ელემენტების none-ს,
+      //ვინაიდან მისი დინამიურად ამოღება არ არის საჭირო
       // რადგან მისი ამოღება მხოლოდ ერთხელ ხდება.
       addRekomendationElementInHtmlStart.style.display = "none";
     });
   });
 
-  bacgroundImageSection.appendChild(addRekomendationElementInHtmlStart);
+  // bacgroundImageSection.appendChild(addRekomendationElementInHtmlStart);
+
+  let gameoreba = false;
+  let washla = null;
+
+  function scrolStartAddElementsInHtmlFn() {
+    window.addEventListener("scroll", () => {
+      const elementRect2 = bacgroundImageSection.getBoundingClientRect();
+      const xiluliZona2 =
+        elementRect2.top >= 0 && elementRect2.top <= window.innerHeight - 600;
+
+      // ukve gadacemuli elemntebis waShla sqrolis gagrdzelebisas ar mushaobs
+
+      // if (washla) {
+      //   bacgroundImageSection.removeChild(washla);
+      // } else
+
+      if (xiluliZona2 && !gameoreba) {
+        bacgroundImageSection.appendChild(addRekomendationElementInHtmlStart);
+        gameoreba = true;
+      }
+
+      // washla = addRekomendationElementInHtmlStart;
+    });
+  }
+
+  scrolStartAddElementsInHtmlFn();
 }
 
-// გასაწერია მოხდეს ამ ფუნქციის გამოძახება სქროლზე
+// xiluliZona2 - sqroll da addElementsInHtmlFn()
 
-let funqciisArGameoreba = false;
-
-function scrolStartAddElementsInHtmlFn() {
-  window.addEventListener("scroll", () => {
-    if (
-      window.scrollY >= 2500 &&
-      window.scrollY <= 2800 &&
-      !funqciisArGameoreba
-    ) {
-      addElementsInHtmlFn();
-
-      funqciisArGameoreba = true;
-    }
-  });
-}
-
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-// responsivze am funqciis sqrolze gamodzaxeba ar xdeba sworad addElementsInHtmlFn();
-
-scrolStartAddElementsInHtmlFn();
+addElementsInHtmlFn();
 
 // project elements
 
