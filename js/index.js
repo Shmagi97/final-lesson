@@ -198,26 +198,17 @@ function addElementsInHtmlFn() {
   // bacgroundImageSection.appendChild(addRekomendationElementInHtmlStart);
 
   let gameoreba = false;
-  let washla = null;
-
   function scrolStartAddElementsInHtmlFn() {
     window.addEventListener("scroll", () => {
       const elementRect2 = bacgroundImageSection.getBoundingClientRect();
       const xiluliZona2 =
         elementRect2.top >= 0 && elementRect2.top <= window.innerHeight - 600;
-
-      // ukve gadacemuli elemntebis waShla sqrolis gagrdzelebisas ar mushaobs
-
-      // if (washla) {
-      //   bacgroundImageSection.removeChild(washla);
-      // } else
-
+      const araXiluliZona =
+        elementRect2.top <= 220 && elementRect2.top <= window.innerHeight;
       if (xiluliZona2 && !gameoreba) {
         bacgroundImageSection.appendChild(addRekomendationElementInHtmlStart);
         gameoreba = true;
       }
-
-      // washla = addRekomendationElementInHtmlStart;
     });
   }
 
