@@ -4,6 +4,26 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Arial GEO BoldItalic";
+  src: url("../fonts/arial-geo-bolditalic-webfont.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/arial-geo-bolditalic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/arial-geo-bolditalic-webfont.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/arial-geo-bolditalic-webfont.woff") format("woff"),
+    /* Pretty Modern Browsers */
+      url("../fonts/arial-geo-bolditalic-webfont.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/arial-geo-bolditalic-webfont.svg#arial_geobolditalic")
+      format("svg"); /* Legacy iOS */
+}
+
+p {
+  font-family: Arial GEO BoldItalic;
+}
+
 .header {
   width: 100%;
   height: auto;
@@ -16,7 +36,7 @@
 
 .had-text-cont {
   width: 95%;
-
+  font-family: My Fonts;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -1578,127 +1598,3 @@ footer > div > p {
     }
   }
 }
-
-/* @media (max-width: 1200px) {
-  .servis-hover-info-main {
-    height: 1500px;
-  }
-
-  .servis-hover-info-section {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 930px) {
-    .my-info-div-cont {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .my-info-cont {
-      align-items: center;
-    }
-
-    .main-my-info {
-      flex-direction: column;
-      row-gap: 30px;
-    }
-
-    .section-my-info {
-      text-align: left;
-    }
-
-    .my-image-cont {
-      width: 60%;
-    }
-
-    .section-my-info > div:nth-child(3) {
-      align-items: start;
-    }
-
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-    .section-number-adress-email > div {
-      flex-direction: column;
-      align-items: center;
-      row-gap: 30px;
-      text-align: center;
-    }
-
-    .section-number-adress-email {
-      justify-content: space-between;
-    }
-
-    .servis-hover-info-section {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .projects > div > div > p {
-      font-size: 15px;
-    }
-  }
-
-  @media (max-width: 632px) {
-    .section-number-adress-email > div > div:first-child {
-      width: 65px;
-      height: 65px;
-    }
-
-    .section-number-adress-email > div > div:last-child span,
-    a {
-      font-size: 15px;
-    }
-
-    .sections-cont {
-      flex-direction: column;
-      row-gap: 30px;
-    }
-
-    .projects-name {
-      width: 100%;
-      height: 70px;
-      justify-content: unset;
-    }
-
-    .projects-name > ul {
-      flex-direction: unset;
-      width: 100%;
-      justify-content: space-around;
-    }
-
-    .projects-name > ul > li {
-      font-size: 15px;
-    }
-
-    .projects-name > ul > li > span {
-      display: none;
-    }
-
-    .Latest-Projects-main {
-      height: 1600px;
-      justify-content: unset;
-      padding: 100px 0;
-    }
-
-    .projects {
-      grid-template-columns: auto auto;
-    }
-
-    .Rosa-Team-Main > section {
-      display: grid;
-      grid-template-columns: auto auto;
-      margin-top: 100px;
-    }
-
-    .Rosa-Team-Main {
-      height: 1000px;
-    }
-
-    .my-info-cont > div > h1 {
-      font-size: 35px;
-    }
-
-    .bacground-image-section > div {
-      column-gap: 20px;
-    }
-  }
-} */
